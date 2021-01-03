@@ -14,7 +14,7 @@ import list from './projects/routing/components/list.vue';
 import item from './projects/routing/components/item.vue';
 
 const app = createApp(App);
-
+ 
 
 const routes = [
     { path: '/list', component: list },
@@ -34,5 +34,5 @@ app.component('TheInput', TheInput);
 
 app.config.devtools = false;
 
-app.use(router);
+//app.use(router);
 app.mount('#app');

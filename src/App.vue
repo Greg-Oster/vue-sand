@@ -1,50 +1,30 @@
 <template>
-  <div class="app">
-    <HelloWorld />
-    <vConditionals />
-    <vFriendListVue />
-    <vAdvancedFriendList />
-    <vScopedSlots/>
-    <FirstProject/>
-    <FormWidget/>
-    <HttpQuest/>
-    <Routing/>
+  <div id="nav">
+    <router-link to="/">Home</router-link> |
+    <router-link to="/about">About</router-link>
   </div>
+  <router-view/>
 </template>
 
-<script>
-import HelloWorld from "./components/HelloWorld.vue";
-import vConditionals from "./components/v-conditionals.vue";
-import vFriendListVue from "./components/v-friend-list.vue";
-import vAdvancedFriendList from "./components/v-advanced-friend-list.vue";
-import vScopedSlots from './components/v-scoped-slots.vue';
-import FirstProject from './projects/first-project/app';
-import FormWidget from './projects/form/app';
-import HttpQuest from './projects/http/app';
-import Routing from './projects/routing/app'
+<style lang="scss">
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+}
 
-export default {
-  name: "App",
-  components: {
-    HelloWorld,
-    vConditionals,
-    vFriendListVue,
-    vAdvancedFriendList,
-    vScopedSlots,
-    FirstProject,
-    FormWidget,
-    HttpQuest,
-    Routing
-  },
-};
-</script>
+#nav {
+  padding: 30px;
 
-<style>
-.app {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-row-gap: 40px;
-  grid-column-gap: 40px;
-  padding: 40px;
+  a {
+    font-weight: bold;
+    color: #2c3e50;
+
+    &.router-link-exact-active {
+      color: #42b983;
+    }
+  }
 }
 </style>

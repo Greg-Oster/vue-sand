@@ -1,6 +1,5 @@
 import { createApp } from 'vue';
-//import VueRouter from 'vue-router';
-import {createRouter} from 'vue-router';
+
 
 import App from './App.vue';
 import vWrapper from './styling/v-wrapper.vue';
@@ -10,20 +9,14 @@ import customWrapper from './styling/customWrapper.vue';
 import TheRadioBtn from './UI/TheRadioBtn.vue';
 import TheInput from './UI/TheInput.vue';
 
-import list from './projects/routing/components/list.vue';
-import item from './projects/routing/components/item.vue';
+// import list from './projects/routing/components/list.vue';
+// import item from './projects/routing/components/item.vue';
+import router from './router'
 
-const app = createApp(App);
- 
+const app = createApp(App).use(router);
 
-const routes = [
-    { path: '/list', component: list },
-    { path: '/item', component: item }
-];
 
-const router = createRouter({
-    routes
-});
+
 
 app.component('vWrapper', vWrapper);
 app.component('BaseCard', BaseCard);
@@ -34,5 +27,5 @@ app.component('TheInput', TheInput);
 
 app.config.devtools = false;
 
-//app.use(router);
+
 app.mount('#app');
